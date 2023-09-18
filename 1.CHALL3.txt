@@ -1,0 +1,28 @@
+
+#include <stdio.h>
+
+int main() {
+    int T[5],i,j,R;
+    for(i = 0;i < 10;i++){
+        printf("saisir un nombre : ");
+        scanf("%d", &T[i]);
+    }
+    printf("Le tableau :\n");
+    for(i = 0;i < 10;i++){
+        printf("     %d ",T[i]);
+    }
+int Min = T[0];
+    for(i = 0;i < 10;i++){
+        for(j = i+1;j < 5;j++){
+    if(T[i] > T[j]){
+       R = T[i];
+       T[i] = T[j];
+       T[j] = R;
+    }
+    }
+    }
+    printf("\n tableau trié en ordre croissant :\n");    
+    for(i = 0;i < 10;i++)
+    printf("     %d ", T[i]);
+    return 0;
+}
