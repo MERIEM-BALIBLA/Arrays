@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 int main() {
-    float T[5];
+    int T[5];
     int i,j,R;
     for(i = 0;i < 10;i++){
         printf("saisir un nombre : ");
