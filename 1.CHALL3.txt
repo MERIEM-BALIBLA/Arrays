@@ -2,7 +2,8 @@
 #include <stdio.h>
 
 int main() {
-    int T[5],i,j,R;
+    float T[5];
+    int i,j,R;
     for(i = 0;i < 10;i++){
         printf("saisir un nombre : ");
         scanf("%d", &T[i]);
