@@ -1,0 +1,42 @@
+
+#include <stdio.h>
+#include <string.h>
+#include <stdbool.h>
+
+int main() {
+    char T[] = "Quel sinistre mot!";
+    char R,lettre;
+    int positionM = 0, positionS = 0, positionL = 0;
+    bool isFound = false;
+
+    // Recherche des positions originales de 'm' et 's'
+    for (int i = 0; T[i] != '\0'; i++) {
+        if (T[i] == 'm') 
+            positionM = i;
+        if (T[i] == 's' && positionS == 0) 
+            positionS = i;
+    }
+    printf("La position de 'm' avant l'echange : %d\n", positionM);
+    printf("La position de 's' avant l'echange : %d\n", positionS);
+    if (positionM != 0 && positionS != 0) {
+        R = T[positionM];
+        T[positionM] = T[positionS];
+        T[positionS] = R;
+    }
+    printf("Texte apres echange : %s\n", T);
+    printf("saisir une lettre :");
+    scanf("%c", &lettre);
+    for (int i = 0; T[i] != '\0'; i++) {
+        if (T[i] == lettre && positionL == 0) 
+        {
+            positionL = i;
+            isFound  = true;
+            break;
+        }
+    }
+    if(isFound)
+      printf("La position de %c : %d\n", lettre,positionL);
+    else
+      printf("abcent !!");
+    return 0;
+}

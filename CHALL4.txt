@@ -1,0 +1,68 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main(){
+    float T[100], somm = 0, moy , Min,Max;
+    int n,count = 0,count1 = 0,indiceMin  = 0,indiceMax = 0;
+    printf("DOnner le nombre des notes : ");
+    scanf("%d", &n);
+    for (int i = 0; i < n;i++){
+        do{
+          printf("donner une note :");
+          scanf("%f", &T[i]);
+            }while(T[i] <= 0 || T[i] >= 20);
+          somm = somm + T[i];
+    }
+    for (int i = 0; i < n;i++){
+      printf("%.2f\n", T[i]);
+    }
+    for (int i = 0; i < n;i++){
+          count++;
+      
+    }
+  // somme et la moyenne
+  printf("le nombre des notes c'est : %d\n",count);
+  printf("La somme des notes c'est: %0.2f\n", somm);
+  moy = somm / n;
+  printf("la moyenne général c'est : %f\n",moy);
+// comparaison
+  printf("les notes inférieur à la moyenne sont :\n");
+  for(int i = 0;i < n;i++){
+    if(T[i] < moy)
+      printf(" %f\n",T[i]);  
+  }
+  printf("les notes supérieur à la moyenne sont :\n");
+  for(int i = 0;i < n;i++){
+    if(T[i] > moy){
+      printf(" %f\n",T[i]);
+      count1++;
+      }
+  }
+  printf("les notes égal à la moyenne sont :\n");
+  for(int i = 0;i < n;i++){
+    if(T[i] == moy)
+      printf(" %f\n",T[i]);
+  }
+  printf("Le nombre des notes qui sont supérieure à la moyenne général : %d\n", count1);
+  // afficher la note minimal et deduire l'adresse
+  Min = T[0];
+  for(int i = 0;i < n; i++){
+    if(T[i] < Min){
+        Min = T[i];
+    indiceMin = i;
+        }
+  }
+  printf("la note minimal c'est : %f\n", Min);
+  printf("l'adresse de la note minimal : %d\n", indiceMin);
+ 
+    Max = T[0];
+  for(int i = 0;i < n; i++){
+    if(T[i] > Max){
+      Max = T[i];
+    indiceMax = i;
+        }
+  }
+  printf("la note maximal c'est : %f\n", Max);
+  printf("l'adresse de la note maximal : %d", indiceMax);
+  return 0;
+ 
+}

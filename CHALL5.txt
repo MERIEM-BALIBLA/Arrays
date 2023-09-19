@@ -1,0 +1,17 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main(){
+char Nom[20];
+int compteur,i;
+printf("Enter your name :");
+scanf("%s", Nom);
+
+printf("Your name : %s\n", Nom);
+
+while (Nom[compteur] != '\0') {
+        compteur++;
+    }
+    printf("le nombre des caracteres : %d", compteur);
+  return 0;
+ 
+}
